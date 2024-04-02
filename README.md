@@ -16,6 +16,8 @@ Entrega da sprint 3 | Digital Business Enablement
 
 > [!IMPORTANT]
 > Banco de Dados : MySql
+> O script sql para criar a tabela está nomeado como 'script_dba_cotco.txt" <BR>
+> Deverá rodar todos os comandos, inclusive o schema.
 
 
 ---
