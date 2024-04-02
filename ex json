@@ -1,0 +1,28 @@
+//METODO CADASTRAR - POST
+"/cadstrar"
+{
+    "respEmpresa": "João Silva",
+    "rzSocialEmpresa": "Silva Tecnologia Ltda",
+    "nmFantEmpresa": "Silva Tech",
+    "cnpjEmpresa": "12.345.678/0001-99",
+    "telEmpresa": "(11) 98765-4321",
+    "emailEmpresa": "contato@silvatech.com.br",
+    "situacaoEmpresa": "Ativa"
+}
+
+----------------------------------------------
+
+//METODO BUSCAR - GET
+"/buscar?situacaoEmpresa=Ativa"
+{
+    "situacaoEmpresa": "Ativa"
+}
+
+-------------------------------------------
+
+//METODO ATUALIZAR - PUT
+"ATUALIZAR/{idEmpresa}"
+{
+    "emailEmpresa": "contato@silvatech.com.br"
+}
+
