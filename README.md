@@ -15,10 +15,13 @@ Entrega da sprint 3 | Digital Business Enablement
 > - Análise de dados de um arquivo CSV para cotação de compra do produto custo benefício.
 
 > [!IMPORTANT]
-> Banco de Dados : MySql
+> **Banco de Dados : MySql**
 > O script sql para criar a tabela está nomeado como 'script_dba_cotco.txt" <BR>
 > Na dúvida, clique aqui: [comando_sql](https://github.com/luiznsc/cotco_webapi/blob/main/script_dba_cotco.txt) <BR>
-> Deverá rodar todos os comandos, inclusive o schema.
+> **Deverá rodar todos os comandos, inclusive o schema.**
+> **Deverá ser usado URL:** <BR>
+> Spring: http://localhost:8080 <BR>
+> DevOps: https://cotcoapibackend.azurewebsites.net
   ---
 
 ## CONTROLLER EMPRESA
