@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import br.com.cotco.empresa.*;
 
 @RestController
-@RequestMapping("empresas")
+@RequestMapping("/empresas")
 public class EmpresaController {
 
     @Autowired
