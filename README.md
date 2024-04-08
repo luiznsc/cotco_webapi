@@ -12,7 +12,6 @@ Entrega da sprint 3 | Digital Business Enablement
 ## DOCUMENTAÇÃO DA API
 #### FUNCIONALIDADES:
 > - CRUD (Create, Read, Update e Delete) de empresa. A empresa é o nosso cliente direto, pois nossa solução é B2B.<BR>
-> - Análise de dados de um arquivo CSV para cotação de compra do produto custo benefício.
 
 > [!IMPORTANT]
 > **Banco de Dados : MySql**
@@ -103,35 +102,3 @@ Entrega da sprint 3 | Digital Business Enablement
 - **Status Codes:**
   - :white_check_mark: 204 (No Content) - Empresa tornou-se INATIVA com sucesso.
   - :x: 404 (Not Found) - Empresa não encontrada.
-
----
-
-  ## CONTROLLER FILEUPLOAD
-> [!IMPORTANT]
-> **Deverá ter o arquivo "cotcoAI.py" em sua máquina.** <BR/>
-> **Altere o diretório na linha 46 do objeto FileUploadController.java** <BR/>
-> **O teste da funcionalidade deve ser feito via postman ou outra ferramenta de teste de api de sua preferência.** <BR/>
-
-- **URL:** /upload
-- **Method:** POST
-- **Description:** Enviar o arquivo csv para a api
-- **URL Parameters:**
-  - file - arquivo csv
-- **Status Codes:**
-  - :white_check_mark: 204 (No Content) - Dados do formulario armazenados no backend.
-
-    
-![exemplo teste analise de dados](https://github.com/luiznsc/challenge_cotco_dbe/blob/main/post_ai.png)
- Em Arquivo: anexar "eletronics_product.csv"
- Em Produto: informar o nome de produto que deseja filtrar a análise.
-
----
-
- - **URL:** /processar
-- **Method:** GET
-- **Description:** Buscar dados retornados do script python
-- **URL Parameters:**
-  - file - arquivo csv
-  - nomeProduto - nome do produto a ser filtrado
-- **Status Codes:**
-  - :white_check_mark: 204 (No Content) - Dados retornados.
