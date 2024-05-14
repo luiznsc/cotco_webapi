@@ -15,18 +15,18 @@ Entrega da sprint 3 | Digital Business Enablement
 
 > [!IMPORTANT]
 > **Banco de Dados : MySql**
-> - O script sql para criar a tabela está nomeado como 'script_dba_cotco.txt" <BR>
-> - Na dúvida, clique aqui: [comando_sql](https://github.com/luiznsc/cotco_webapi/blob/main/script_dba_cotco.txt) <BR>
-> **Deverá rodar todos os comandos, inclusive o schema.**
+> O script sql para criar a tabela está nomeado como 'script_dba_cotco.txt" <BR>
+> Na dúvida, clique aqui: [comando_sql](https://github.com/luiznsc/cotco_webapi/blob/main/script_dba_cotco.txt) <BR>
+> **Deverá rodar todos os comandos, inclusive o schema.** <br>
 > <BR>
 > **Deverá ser usado URL:** <BR>
 > Spring: http://localhost:8080 <BR>
 > <BR>
 > **Testar Conexão com API JAVA**<BR>
 > Precisa rodar o "app.py" em sua máquina local -> [repositório da api python](https://github.com/luiznsc/cotco_ai_api)<BR>
-> - Testar via Postman, conforme o print, informando o:<br>
-> - *eletronics_products.csv* - está no "repositório da api python"<br>
-> - *nome do produto*
+>Testar via Postman, conforme o print, informando o:<br>
+>- *eletronics_products.csv* - está no "repositório da api python"<br>
+>- *nome do produto*
   ---
 
 ## CONTROLLER EMPRESA
