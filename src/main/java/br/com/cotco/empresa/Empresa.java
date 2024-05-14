@@ -38,7 +38,10 @@ public class Empresa {
     private String emailEmpresa;
 
     @Column(name =  "SITUACAO_EMPRESA", nullable = false)
-    private String situacaoEmpresa;
+    private String situacaoEmpresa = "ATIVA";
+
+    @Column(name =  "SENHA_EMPRESA", nullable = false)
+    private String senhaEmpresa;
 
 
     //construtor para repository campo empresaUsuario
@@ -55,6 +58,7 @@ public class Empresa {
         this.telEmpresa = dadosEmpresa.telEmpresa();
         this.emailEmpresa = dadosEmpresa.emailEmpresa();
         this.situacaoEmpresa = dadosEmpresa.situacaoEmpresa();
+        this.senhaEmpresa = dadosEmpresa.senhaEmpresa();
     }
     //metodo para tratar os campos de atualizacao do endereco
     public void atualizarInformacoes(RDadosAtualizacaoEmpresa dadosEmpresa){
@@ -69,6 +73,9 @@ public class Empresa {
         }
         if (dadosEmpresa.emailEmpresa() != null) {
             this.emailEmpresa = dadosEmpresa.emailEmpresa();
+        }
+        if (dadosEmpresa.senhaEmpresa() != null) {
+            this.senhaEmpresa = dadosEmpresa.senhaEmpresa();
         }
     }
 

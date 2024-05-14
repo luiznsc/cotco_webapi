@@ -4,6 +4,7 @@ public record RDadosAtualizacaoEmpresa(
         String respEmpresa,
         String nmFantEmpresa,
         String telEmpresa,
-        String emailEmpresa
+        String emailEmpresa,
+        String senhaEmpresa
     ) {
 }

@@ -4,25 +4,20 @@ package br.com.cotco.Controller;
 import br.com.cotco.empresa.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import br.com.cotco.empresa.Empresa;
 import br.com.cotco.empresa.IEmpresaRepository;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
-import br.com.cotco.empresa.*;
 
 @RestController
 @RequestMapping("/empresas")
+@CrossOrigin(origins = "http://localhost:3000")
 public class EmpresaController {
 
     @Autowired
@@ -34,11 +29,29 @@ public class EmpresaController {
     public void cadastroEmpresa(@RequestBody @Valid RDadosCadastroEmpresa dadosEmpresa){
         EmpRepository.save(new Empresa(dadosEmpresa));
     }
-    //buscar
+
     @GetMapping("/buscar")
-    public Page<RDadosListagemEmpresa> listar(@RequestParam(name = "situacaoEmpresa") String situacaoEmpresa, @PageableDefault(size = 10, sort = {"nmFantEmpresa"}) Pageable paginacao){
-        return EmpRepository.findAllBySituacaoEmpresa(situacaoEmpresa, paginacao).map(RDadosListagemEmpresa::new);
+    public ResponseEntity<RDadosListagemEmpresa> listar(
+            @RequestParam(name = "emailEmpresa") String emailEmpresa,
+            @RequestParam(name = "senhaEmpresa") String senhaEmpresa,
+            @RequestParam(name = "situacaoEmpresa") String situacaoEmpresa,
+            @PageableDefault(size = 1, sort = {"nmFantEmpresa"}) Pageable paginacao){
+
+        Empresa empresa = EmpRepository.findByEmailEmpresaAndSenhaEmpresa(emailEmpresa, senhaEmpresa);
+
+        if (empresa == null) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        // Verifica se a empresa está ativa
+        if (!situacaoEmpresa.equalsIgnoreCase("ATIVA")) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        RDadosListagemEmpresa empresaDados = new RDadosListagemEmpresa(empresa);
+        return ResponseEntity.ok(empresaDados);
     }
+
 
     //atualizar
     @PutMapping("/atualizar/{idEmpresa}")

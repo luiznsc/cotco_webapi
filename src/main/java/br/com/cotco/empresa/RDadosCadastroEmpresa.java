@@ -7,6 +7,7 @@ public record RDadosCadastroEmpresa(
         String cnpjEmpresa,
         String telEmpresa,
         String emailEmpresa,
-        String situacaoEmpresa
+        String situacaoEmpresa,
+        String senhaEmpresa
     ) {
 }
