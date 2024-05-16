@@ -21,9 +21,9 @@ import java.io.IOException;
 @RestController
 @CrossOrigin(origins = {"http://localhost:5000", "http://localhost:3000"})
 public class AnaliseCotacaoController {
-
     @PostMapping("/enviarAnalise")
-    public String getProduto(@RequestParam String nomeProduto, @RequestParam MultipartFile file) {
+    public ResponseEntity<String> getProduto(@RequestParam("productname") String productname,
+                                             @RequestParam("file") MultipartFile file) {
         RestTemplate restTemplate = new RestTemplate();
 
         // Define a URL da API Flask
@@ -36,7 +36,7 @@ public class AnaliseCotacaoController {
         // Cria um objeto MultiValueMap e adiciona o recurso do arquivo, o nome do produto e o critério a ele
         MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
         body.add("file", new FileSystemResource(convert(file)));
-        body.add("productname", nomeProduto);
+        body.add("productname", productname);
 
         // Cria um objeto HttpEntity usando os headers e o body
         HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
@@ -45,7 +45,7 @@ public class AnaliseCotacaoController {
         ResponseEntity<String> response = restTemplate.postForEntity(url, requestEntity, String.class);
 
         // Retorna o corpo da resposta
-        return response.getBody();
+        return new ResponseEntity<>(response.getBody(), response.getStatusCode());
     }
 
     // Método auxiliar para converter um MultipartFile em um File
@@ -53,9 +53,9 @@ public class AnaliseCotacaoController {
         File convFile = new File(file.getOriginalFilename());
         try {
             convFile.createNewFile();
-            FileOutputStream fos = new FileOutputStream(convFile);
-            fos.write(file.getBytes());
-            fos.close();
+            try (FileOutputStream fos = new FileOutputStream(convFile)) {
+                fos.write(file.getBytes());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
