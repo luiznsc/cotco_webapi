@@ -1,5 +1,5 @@
-# SPRINT 3 | COT&CO | 2TDSPT
-Entrega da sprint 3 | Digital Business Enablement
+# SPRINT 4 | COT&CO | 2TDSPT
+Entrega da sprint 4 | Digital Business Enablement
 > [!NOTE]
 >**INTEGRANTES** <BR>
 > Nome: Eduardo Fagundes Correa | RM: 97195 <BR>
@@ -47,7 +47,8 @@ Entrega da sprint 3 | Digital Business Enablement
         "cnpjEmpresa": "12.345.678/0001-99",
         "telEmpresa": "(11) 98765-4321",
         "emailEmpresa": "contato@silvatech.com.br",
-        "situacaoEmpresa": "Ativa"
+        "situacaoEmpresa": "Ativa",
+        "senhaEmpresa": "Senha123"
     }
 
 ---
