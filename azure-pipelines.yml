@@ -20,3 +20,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- script: rm $(Build.ArtifactStagingDirectory)/nome_do_arquivo.jar
+  displayName: 'maven-wrapper.jar'
+  - script: rm $(Build.ArtifactStagingDirectory)/nome_do_arquivo.jar
+  displayName: 'demo-0.0.1-SNAPSHOT.jar'
+
