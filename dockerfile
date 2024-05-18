@@ -1,5 +1,4 @@
-# Use a imagem base do OpenJDK 11
-FROM openjdk:11-jdk-slim
+FROM openjdk:17-jdk-slim
 
 COPY ./demo.jar /app.jar
 
