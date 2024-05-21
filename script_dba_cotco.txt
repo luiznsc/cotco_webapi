@@ -1,3 +1,5 @@
+--MYSQL
+
 CREATE SCHEMA `schemapadrao` ;
 use `schemapadrao` ;
 CREATE TABLE TB_EMPRESA (
