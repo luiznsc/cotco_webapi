@@ -78,6 +78,8 @@ Entrega da sprint 4 | Digital Business Enablement
         "nmFantEmpresa": "Silva Tech Company",
         "telEmpresa": "(11) 99999-9999",
         "emailEmpresa": "contatonovoemail@silvatech.com.br",
+        "situacaoEmpresa": "Ativa",
+        "senhaEmpresa": "Senha123"
     }
 
 ---
